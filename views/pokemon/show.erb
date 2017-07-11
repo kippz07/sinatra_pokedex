@@ -2,3 +2,9 @@
 
 <p><%= @pokemon.location %></p>
 <p><%= @pokemon.shiny %></p>
+
+<a href="/pokemon/<%= @pokemon.id %>/edit">Edit</a>
+<form action="<%= @pokemon.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete">
+</form>

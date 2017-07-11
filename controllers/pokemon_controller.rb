@@ -37,20 +37,34 @@ class PokemonController < Sinatra::Base
     pokemon.day = params[:day]
     pokemon.shiny = params[:shiny]
     pokemon.save
+
+    redirect "/"
   end
 
   # edit
   get "/:id/edit" do
-    "Edit"
+    id = params[:id].to_i
+    @pokemon = Pokemon.find id
+    erb :"pokemon/edit"
   end
 
   # update
   put "/:id" do
-    "Updated"
+  id = params[:id].to_i
+  pokemon = Pokemon.find id
+  pokemon.index = params[:index]
+  pokemon.name = params[:name]
+  pokemon.location = params[:location]
+  pokemon.day = params[:day]
+  pokemon.shiny = params[:shiny]
+  pokemon.update
+
+  redirect "/"
   end 
 
   # delete
   delete "/:id" do
-    "Deleted"
+    Pokemon.destroy params[:id]
+    redirect "/"
   end
 end

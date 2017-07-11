@@ -1,0 +1,21 @@
+<h1>Edit your pokedex entry for <%= @pokemon.name %></h1>
+
+<form method="POST" action="/<%= @pokemon.id %>">
+  <input type="hidden" name="_method" value="PUT">
+  <label for="index">National Pokedex Number</label>
+  <input type="text" name="index" value="<%= @pokemon.index %>">
+
+  <label for="name">Pokemon name</label>
+  <input type="text" name="name" value="<%= @pokemon.name %>">
+
+  <label for="location">Location caught</label>
+  <input type="text" name="location" value="<%= @pokemon.location %>">
+
+  <label for="day">Date caught</label>
+  <input type="text" name="day" value="<%= @pokemon.day %>">
+
+  <label for="shiny">Shiny</label>
+  <input type="text" name="shiny" value="<%= @pokemon.shiny %>">
+
+  <input type="submit" value="Submit">
+</form>

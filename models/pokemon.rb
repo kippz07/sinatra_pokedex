@@ -37,7 +37,19 @@ class Pokemon
 
   def save
     conn = Pokemon.open_connection
-    sql = "INSERT INTO pokemon (index, name, location, day, shiny) VALUES (#{self.index}, '#{self.name}', '#{self.location}', '#{self.day}', '#{self.shiny}')"
+    sql = "INSERT INTO pokemon (index, name, location, day, shiny) VALUES ('#{self.index}', '#{self.name}', '#{self.location}', '#{self.day}', '#{self.shiny}')"
+    conn.exec(sql)
+  end
+
+  def update
+    conn = Pokemon.open_connection
+    sql = "UPDATE pokemon SET index='#{index}', name='#{name}', location='#{location}', day='#{day}', shiny='#{shiny}' WHERE id = #{id}"
+    conn.exec(sql)
+  end
+
+  def self.destroy id
+    conn = self.open_connection
+    sql = "DELETE FROM pokemon WHERE id = #{id}"
     conn.exec(sql)
   end
 end

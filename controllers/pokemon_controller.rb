@@ -1,4 +1,4 @@
-class PokemonController
+class PokemonController < Sinatra::Base
 
   # sets root as the parent-directory of the current file
   set :root, File.join(File.dirname(__FILE__), '..')
@@ -15,14 +15,14 @@ class PokemonController
     "Homepage"
   end
 
-  # show
-  get "/:id" do
-    "Show"
-  end
-
   # new
   get "/new" do
     "New"
+  end
+
+  # show
+  get "/:id" do
+    "Show"
   end
 
   # create

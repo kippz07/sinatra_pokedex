@@ -23,7 +23,9 @@ class PokemonController < Sinatra::Base
 
   # show
   get "/:id" do
-    "Show"
+    id = params[:id].to_i
+    @pokemon = Pokemon.find id
+    erb :"pokemon/show"
   end
 
   # create

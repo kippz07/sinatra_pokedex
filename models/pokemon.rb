@@ -27,4 +27,11 @@ class Pokemon
     end
     pokemon
   end
+
+  def self.find id
+    conn = self.open_connection
+    sql = "SELECT * FROM pokemon WHERE id = #{id}"
+    pokemon = conn.exec(sql)
+    self.hydrate pokemon.first
+  end
 end

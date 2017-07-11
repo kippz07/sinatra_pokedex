@@ -34,4 +34,10 @@ class Pokemon
     pokemon = conn.exec(sql)
     self.hydrate pokemon.first
   end
+
+  def save
+    conn = Pokemon.open_connection
+    sql = "INSERT INTO pokemon (index, name, location, day, shiny) VALUES (#{self.index}, '#{self.name}', '#{self.location}', '#{self.day}', '#{self.shiny}')"
+    conn.exec(sql)
+  end
 end

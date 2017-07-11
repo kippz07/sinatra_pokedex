@@ -18,7 +18,7 @@ class PokemonController < Sinatra::Base
 
   # new
   get "/new" do
-    "New"
+    erb :"pokemon/new"
   end
 
   # show
@@ -30,7 +30,13 @@ class PokemonController < Sinatra::Base
 
   # create
   post "/" do
-    "Created"
+    pokemon = Pokemon.new
+    pokemon.index = params[:index]
+    pokemon.name = params[:name]
+    pokemon.location = params[:location]
+    pokemon.day = params[:day]
+    pokemon.shiny = params[:shiny]
+    pokemon.save
   end
 
   # edit

@@ -12,7 +12,8 @@ class PokemonController < Sinatra::Base
 
   # index
   get "/" do
-    "Homepage"
+    @pokemon = Pokemon.all
+    erb :"pokemon/index"
   end
 
   # new

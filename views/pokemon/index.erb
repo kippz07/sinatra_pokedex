@@ -1,2 +1,7 @@
 <h1>Your Pokedex!</h1>
 
+<% @pokemon.each do |pokemon| %>
+  <h3><%= pokemon.name %></h3>
+  <p><%= pokemon.location %></p>
+  <p><%= pokemon.shiny %></p>
+<% end %>  

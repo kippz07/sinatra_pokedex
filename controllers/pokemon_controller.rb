@@ -25,6 +25,7 @@ class PokemonController < Sinatra::Base
   get "/:id" do
     id = params[:id].to_i
     @pokemon = Pokemon.find id
+    @pokemon.shiny == "t" ? @pokemon.shiny = "true" : @pokemon.shiny = "false"
     erb :"pokemon/show"
   end
 
@@ -50,16 +51,16 @@ class PokemonController < Sinatra::Base
 
   # update
   put "/:id" do
-  id = params[:id].to_i
-  pokemon = Pokemon.find id
-  pokemon.index = params[:index]
-  pokemon.name = params[:name]
-  pokemon.location = params[:location]
-  pokemon.day = params[:day]
-  pokemon.shiny = params[:shiny]
-  pokemon.update
-
-  redirect "/"
+    id = params[:id].to_i
+    pokemon = Pokemon.find id
+    pokemon.index = params[:index]
+    pokemon.name = params[:name]
+    pokemon.location = params[:location]
+    pokemon.day = params[:day]
+    params[:shiny] == "true" ? pokemon.shiny = "true" : pokemon.shiny = "false"
+    pokemon.update
+    puts params[:shiny]
+    redirect "/"
   end 
 
   # delete

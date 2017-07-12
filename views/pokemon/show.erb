@@ -1,10 +1,18 @@
 <h1><%= @pokemon.name %></h1>
+<div class="page-div">
+  <div>
+    <p>Location caught: <%= @pokemon.location %></p>
+  </div>
+  <div>
+    <p>Date caught: <%= @pokemon.day %></p>
+  </div>
+  <div>
+    <p>Shiny: <%= @pokemon.shiny %></p>
+  </div>
 
-<p><%= @pokemon.location %></p>
-<p><%= @pokemon.shiny %></p>
-
-<a href="/pokemon/<%= @pokemon.id %>/edit">Edit</a>
-<form action="<%= @pokemon.id %>" method="POST">
-  <input type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="Delete">
-</form>
+  <a href="/<%= @pokemon.id %>/edit">Edit</a>
+  <form action="<%= @pokemon.id %>" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <input id="delete-button" type="submit" value="Delete">
+  </form>
+</div>

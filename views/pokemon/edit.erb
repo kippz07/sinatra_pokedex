@@ -1,21 +1,33 @@
 <h1>Edit your pokedex entry for <%= @pokemon.name %></h1>
+<div class="page-div">
+  <form method="POST" action="/<%= @pokemon.id %>">
+    <input type="hidden" name="_method" value="PUT">
 
-<form method="POST" action="/<%= @pokemon.id %>">
-  <input type="hidden" name="_method" value="PUT">
-  <label for="index">National Pokedex Number</label>
-  <input type="text" name="index" value="<%= @pokemon.index %>">
+    <div class="input-div">
+      <label for="index">National Pokedex Number</label>
+      <input type="number" name="index" value="<%= @pokemon.index %>">
+    </div>
 
-  <label for="name">Pokemon name</label>
-  <input type="text" name="name" value="<%= @pokemon.name %>">
+    <div class="input-div">
+      <label for="name">Pokemon name</label>
+      <input type="text" name="name" value="<%= @pokemon.name %>">
+    </div>
 
-  <label for="location">Location caught</label>
-  <input type="text" name="location" value="<%= @pokemon.location %>">
+    <div class="input-div">
+      <label for="location">Location caught</label>
+      <input type="text" name="location" value="<%= @pokemon.location %>">
+    </div>
 
-  <label for="day">Date caught</label>
-  <input type="text" name="day" value="<%= @pokemon.day %>">
+    <div class="input-div">
+      <label for="day">Date caught</label>
+      <input type="date" name="day" value="<%= @pokemon.day %>">
+    </div>
 
-  <label for="shiny">Shiny</label>
-  <input type="text" name="shiny" value="<%= @pokemon.shiny %>">
+    <div class="input-div">
+      <label for="shiny">Shiny</label>
+      <input type="checkbox" name="shiny" value="true">
+    </div>
 
-  <input type="submit" value="Submit">
-</form>
+    <input type="submit" value="Submit">
+  </form>
+</div>

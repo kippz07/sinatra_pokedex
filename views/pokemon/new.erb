@@ -1,20 +1,31 @@
 <h1>Add a Pokemon you have caught!</h1>
-
+<div class="page-div">
 <form method="POST" action="/">
-  <label for="index">National Pokedex Number</label>
-  <input type="text" name="index">
+  <div class="input-div">
+    <label for="index">National Pokedex Number</label>
+    <input type="number" name="index">
+  </div>
 
-  <label for="name">Pokemon name</label>
-  <input type="text" name="name">
+  <div class="input-div">
+    <label for="name">Pokemon name</label>
+    <input type="text" name="name">
+  </div>
 
-  <label for="location">Location caught</label>
-  <input type="text" name="location">
+  <div class="input-div">
+    <label for="location">Location caught</label>
+    <input type="text" name="location">
+  </div>
 
-  <label for="day">Date caught</label>
-  <input type="text" name="day">
+  <div class="input-div">
+    <label for="day">Date caught</label>
+    <input type="date" name="day">
+  </div>
 
-  <label for="shiny">Shiny</label>
-  <input type="text" name="shiny">
+  <div class="input-div">
+    <label for="shiny">Shiny</label>
+    <input type="checkbox" name="shiny">
+  </div>
 
   <input type="submit" value="Submit">
 </form>
+</div>

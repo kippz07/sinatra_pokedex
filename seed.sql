@@ -6,11 +6,11 @@ CREATE TABLE pokemon (
   index INTEGER NOT NULL,
   name TEXT NOT NULL,
   location TEXT,
-  day TEXT NOT NULL,
+  day DATE NOT NULL,
   shiny BOOLEAN NOT NULL
 
 );
 
-INSERT INTO pokemon (index, name, location, day, shiny) VALUES (001, 'Bulbasaur', 'grass', 'today', FALSE);
-INSERT INTO pokemon (index, name, location, day, shiny) VALUES (002, 'Charmander', 'fire', 'today', TRUE);
-INSERT INTO pokemon (index, name, location, day, shiny) VALUES (003, 'Squirtle', 'water', 'yesterday', FALSE);
+INSERT INTO pokemon (index, name, location, day, shiny) VALUES (001, 'Bulbasaur', 'grass', '2017-02-15', false);
+INSERT INTO pokemon (index, name, location, day, shiny) VALUES (002, 'Charmander', 'fire', '2016-12-25', false);
+INSERT INTO pokemon (index, name, location, day, shiny) VALUES (003, 'Squirtle', 'water', '2017-04-17', false);

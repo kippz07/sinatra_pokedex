@@ -2,9 +2,12 @@
 <html>
   <head>
     <title>Pokedex</title>
+    <link rel="stylesheet" type="text/css" href="/css/global1.css">
   </head>
   <body>
-
-  <%= yield %>
+    <section>
+      <%= erb(:'partials/navigation', :layout => false) %>
+      <%= yield %>
+    </section>
   </body>
 </html>
